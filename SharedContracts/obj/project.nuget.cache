@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "dgSpecHash": "iZ0gIua7oU0=",
+  "success": true,
+  "projectFilePath": "/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/SharedContracts/SharedContracts.csproj",
+  "expectedPackageFiles": [
+    "/Users/darazdanok/.nuget/packages/confluent.kafka/2.12.0/confluent.kafka.2.12.0.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/librdkafka.redist/2.12.0/librdkafka.redist.2.12.0.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/microsoft.entityframeworkcore/8.0.1/microsoft.entityframeworkcore.8.0.1.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.1/microsoft.entityframeworkcore.abstractions.8.0.1.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/microsoft.entityframeworkcore.analyzers/8.0.1/microsoft.entityframeworkcore.analyzers.8.0.1.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/microsoft.extensions.caching.abstractions/8.0.0/microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/microsoft.extensions.caching.memory/8.0.0/microsoft.extensions.caching.memory.8.0.0.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/microsoft.extensions.logging/8.0.0/microsoft.extensions.logging.8.0.0.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/microsoft.extensions.options/8.0.0/microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/microsoft.openapi/1.6.23/microsoft.openapi.1.6.23.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/swashbuckle.aspnetcore.swagger/8.1.0/swashbuckle.aspnetcore.swagger.8.1.0.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/swashbuckle.aspnetcore.swaggergen/8.1.0/swashbuckle.aspnetcore.swaggergen.8.1.0.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/swashbuckle.aspnetcore.swaggerui/8.1.0/swashbuckle.aspnetcore.swaggerui.8.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

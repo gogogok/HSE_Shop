@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>HSE_Shop Frontend</title>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 24px auto; padding: 0 16px; }
+        .row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+        input { padding: 8px; min-width: 220px; }
+        button { padding: 8px 12px; cursor: pointer; }
+        pre { background: #f6f6f6; padding: 12px; overflow: auto; }
+        h2 { margin-top: 28px; }
+    </style>
+</head>
+<body>
+<h1>HSE_Shop</h1>
+<p>Minimal frontend (separate .NET service) — REST via GatewayService</p>
+
+<h2>Payments</h2>
+<div class="row">
+    <input id="userId" placeholder="userId (e.g. u1)"/>
+</div>
+
+<div class="row">
+    <button onclick="createAccount()">Create account</button>
+    <button onclick="getBalance()">Get balance</button>
+</div>
+
+<div class="row">
+    <input id="topupAmount" placeholder="topup amount (e.g. 100)" />
+    <button onclick="topUp()">Top up</button>
+</div>
+
+<h2>Orders</h2>
+<div class="row">
+    <input id="orderAmount" placeholder="order amount (e.g. 25)" />
+    <input id="orderDesc" placeholder="description" />
+    <button onclick="createOrder()">Create order</button>
+</div>
+
+<div class="row">
+    <button onclick="listOrders()">List orders</button>
+</div>
+
+<h2>Output</h2>
+<pre id="out">Ready.</pre>
+
+<script src="app.js"></script>
+</body>
+</html>

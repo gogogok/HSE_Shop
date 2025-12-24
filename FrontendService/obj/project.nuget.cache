@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "a51WKyJ/hVQ=",
+  "success": true,
+  "projectFilePath": "/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/FrontendService/FrontendService.csproj",
+  "expectedPackageFiles": [
+    "/Users/darazdanok/.nuget/packages/microsoft.openapi/1.6.23/microsoft.openapi.1.6.23.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/swashbuckle.aspnetcore.swagger/8.1.0/swashbuckle.aspnetcore.swagger.8.1.0.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/swashbuckle.aspnetcore.swaggergen/8.1.0/swashbuckle.aspnetcore.swaggergen.8.1.0.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/swashbuckle.aspnetcore.swaggerui/8.1.0/swashbuckle.aspnetcore.swaggerui.8.1.0.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/microsoft.netcore.app.ref/8.0.22/microsoft.netcore.app.ref.8.0.22.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.22/microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512",
+    "/Users/darazdanok/.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.22/microsoft.netcore.app.host.osx-arm64.8.0.22.nupkg.sha512"
+  ],
+  "logs": []
+}

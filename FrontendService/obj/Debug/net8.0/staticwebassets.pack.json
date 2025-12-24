@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/FrontendService/wwwroot/app.js",
+      "PackagePath": "staticwebassets/app.js"
+    },
+    {
+      "Id": "/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/FrontendService/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.FrontendService.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.FrontendService.props",
+      "PackagePath": "build\\FrontendService.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.FrontendService.props",
+      "PackagePath": "buildMultiTargeting\\FrontendService.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.FrontendService.props",
+      "PackagePath": "buildTransitive\\FrontendService.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

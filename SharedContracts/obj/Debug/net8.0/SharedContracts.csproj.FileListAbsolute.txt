@@ -1,0 +1,24 @@
+/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/SharedContracts/bin/Debug/net8.0/SharedContracts.deps.json
+/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/SharedContracts/bin/Debug/net8.0/SharedContracts.dll
+/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/SharedContracts/bin/Debug/net8.0/SharedContracts.pdb
+/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/SharedContracts/obj/Debug/net8.0/SharedContracts.csproj.AssemblyReference.cache
+/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/SharedContracts/obj/Debug/net8.0/SharedContracts.GeneratedMSBuildEditorConfig.editorconfig
+/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/SharedContracts/obj/Debug/net8.0/SharedContracts.AssemblyInfoInputs.cache
+/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/SharedContracts/obj/Debug/net8.0/SharedContracts.AssemblyInfo.cs
+/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/SharedContracts/obj/Debug/net8.0/SharedContracts.csproj.CoreCompileInputs.cache
+/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/SharedContracts/obj/Debug/net8.0/SharedContracts.dll
+/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/SharedContracts/obj/Debug/net8.0/refint/SharedContracts.dll
+/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/SharedContracts/obj/Debug/net8.0/SharedContracts.pdb
+/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/SharedContracts/obj/Debug/net8.0/ref/SharedContracts.dll
+/src/SharedContracts/bin/Debug/net8.0/SharedContracts.deps.json
+/src/SharedContracts/bin/Debug/net8.0/SharedContracts.dll
+/src/SharedContracts/bin/Debug/net8.0/SharedContracts.pdb
+/src/SharedContracts/obj/Debug/net8.0/SharedContracts.csproj.AssemblyReference.cache
+/src/SharedContracts/obj/Debug/net8.0/SharedContracts.GeneratedMSBuildEditorConfig.editorconfig
+/src/SharedContracts/obj/Debug/net8.0/SharedContracts.AssemblyInfoInputs.cache
+/src/SharedContracts/obj/Debug/net8.0/SharedContracts.AssemblyInfo.cs
+/src/SharedContracts/obj/Debug/net8.0/SharedContracts.csproj.CoreCompileInputs.cache
+/src/SharedContracts/obj/Debug/net8.0/SharedContracts.dll
+/src/SharedContracts/obj/Debug/net8.0/refint/SharedContracts.dll
+/src/SharedContracts/obj/Debug/net8.0/SharedContracts.pdb
+/src/SharedContracts/obj/Debug/net8.0/ref/SharedContracts.dll

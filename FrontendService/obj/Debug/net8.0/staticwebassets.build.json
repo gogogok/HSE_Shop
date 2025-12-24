@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "Hash": "sqpPozG21U4jq76G4ZViUih96H0swWxi8zYKxRJBmdU=",
+  "Source": "FrontendService",
+  "BasePath": "_content/FrontendService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "FrontendService/wwwroot",
+      "Source": "FrontendService",
+      "ContentRoot": "/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/FrontendService/wwwroot/",
+      "BasePath": "_content/FrontendService",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/FrontendService/wwwroot/app.js",
+      "SourceId": "FrontendService",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/FrontendService/wwwroot/",
+      "BasePath": "_content/FrontendService",
+      "RelativePath": "app.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/app.js"
+    },
+    {
+      "Identity": "/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/FrontendService/wwwroot/index.html",
+      "SourceId": "FrontendService",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/darazdanok/Desktop/2 курс/KPO/HSE_Shop/FrontendService/wwwroot/",
+      "BasePath": "_content/FrontendService",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/index.html"
+    }
+  ]
+}

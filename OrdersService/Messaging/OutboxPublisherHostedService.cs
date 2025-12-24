@@ -1,0 +1,88 @@
+using Confluent.Kafka;
+using OrdersService.Data;
+using Microsoft.EntityFrameworkCore;
+using OrdersService.Data.Entities;
+
+namespace OrdersService.Messaging
+{
+    public sealed class OutboxPublisherHostedService : BackgroundService
+    {
+        private readonly IServiceScopeFactory _scopeFactory;
+        private readonly IKafkaProducerFactory _producerFactory;
+        private readonly ILogger<OutboxPublisherHostedService> _log;
+        private readonly int _batchSize;
+        private readonly int _pollMs;
+
+        public OutboxPublisherHostedService(
+            IServiceScopeFactory scopeFactory,
+            IKafkaProducerFactory producerFactory,
+            IConfiguration cfg,
+            ILogger<OutboxPublisherHostedService> log)
+        {
+            _scopeFactory = scopeFactory;
+            _producerFactory = producerFactory;
+            _log = log;
+
+            _batchSize = cfg.GetValue("Outbox:BatchSize", 20);
+            _pollMs = cfg.GetValue("Outbox:PollIntervalMs", 1000);
+        }
+
+        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+        {
+            using IProducer<string, string> producer = _producerFactory.Create();
+
+            while (!stoppingToken.IsCancellationRequested)
+            {
+                try
+                {
+                    using IServiceScope scope = _scopeFactory.CreateScope();
+                    OrdersDbContext db = scope.ServiceProvider.GetRequiredService<OrdersDbContext>();
+
+                    List<OutboxMessage> batch = await db.OutboxMessages
+                        .Where(x => x.PublishedAtUtc == null)
+                        .OrderBy(x => x.Id)
+                        .Take(_batchSize)
+                        .ToListAsync(stoppingToken);
+
+                    if (batch.Count == 0)
+                    {
+                        await Task.Delay(_pollMs, stoppingToken);
+                        continue;
+                    }
+
+                    foreach (OutboxMessage m in batch)
+                    {
+                        try
+                        {
+                            DeliveryResult<string, string>? dr = await producer.ProduceAsync(
+                                m.Topic,
+                                new Message<string, string> { Key = m.Key, Value = m.PayloadJson },
+                                stoppingToken);
+
+                            m.PublishedAtUtc = DateTime.UtcNow;
+                            m.PublishAttempts++;
+                            m.LastError = null;
+
+                            _log.LogInformation("Outbox published id={Id} topic={Topic} offset={Offset}",
+                                m.Id, m.Topic, dr.Offset.Value);
+                        }
+                        catch (Exception ex)
+                        {
+                            m.PublishAttempts++;
+                            m.LastError = ex.Message;
+                            _log.LogWarning(ex, "Outbox publish failed id={Id} topic={Topic}", m.Id, m.Topic);
+                        }
+                    }
+
+                    await db.SaveChangesAsync(stoppingToken);
+                }
+                catch (OperationCanceledException) { }
+                catch (Exception ex)
+                {
+                    _log.LogError(ex, "Outbox loop failed");
+                    await Task.Delay(1000, stoppingToken);
+                }
+            }
+        }
+    }
+}
