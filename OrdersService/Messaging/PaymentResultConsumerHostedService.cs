@@ -6,13 +6,34 @@ using Microsoft.Extensions.Options;
 
 namespace OrdersService.Messaging
 {
+    /// <summary>
+    /// Consumer для результатов оплаты
+    /// </summary>
     public sealed class PaymentResultConsumerHostedService : BackgroundService
     {
+        /// <summary>
+        /// Фабрика scope
+        /// </summary>
         private readonly IServiceScopeFactory _scopeFactory;
+        
+        /// <summary>
+        /// JSON-сериализатор сообщений
+        /// </summary>
         private readonly IJsonMessageSerializer _json;
+        
+        /// <summary>
+        /// Kafka настройки
+        /// </summary>
         private readonly KafkaOptions _opt;
+        
+        /// <summary>
+        /// Логгер
+        /// </summary>
         private readonly ILogger<PaymentResultConsumerHostedService> _log;
 
+        /// <summary>
+        /// Конструктор PaymentResultConsumerHostedService
+        /// </summary>
         public PaymentResultConsumerHostedService(
             IServiceScopeFactory scopeFactory,
             IJsonMessageSerializer json,
@@ -25,6 +46,9 @@ namespace OrdersService.Messaging
             _log = log;
         }
 
+        /// <summary>
+        /// Основной цикл consumer
+        /// </summary>
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
             return Task.Run(() =>

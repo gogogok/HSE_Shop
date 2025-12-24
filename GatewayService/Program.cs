@@ -13,14 +13,13 @@ builder.Services.AddSwaggerGen(c =>
 
 WebApplication app = builder.Build();
 
-// просто health
+//просто health
 app.MapGet("/", () => Results.Ok("GatewayService is alive"));
 
-// ВАЖНО: Swagger UI на Gateway, но с 3 “вкладками”:
-// gateway + orders + payments
+//Swagger UI на Gateway, но с 3 “вкладками”:
+//gateway + orders + payments
 app.UseSwagger(c =>
 {
-    // gateway own spec (будет минимальный)
     c.RouteTemplate = "swagger/{documentName}/swagger.json";
 });
 
@@ -32,8 +31,6 @@ app.UseSwaggerUI(c =>
     c.SwaggerEndpoint("/payments/swagger/v1/swagger.json", "PaymentsService");
 });
 
-
-// reverse proxy
 app.MapReverseProxy();
 
 app.Run();

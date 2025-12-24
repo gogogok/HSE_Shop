@@ -5,14 +5,38 @@ using OrdersService.Data.Entities;
 
 namespace OrdersService.Messaging
 {
+    /// <summary>
+    /// Публикация сообщений Outbox
+    /// </summary>
     public sealed class OutboxPublisherHostedService : BackgroundService
     {
+        /// <summary>
+        /// Фабрика скоупов
+        /// </summary>
         private readonly IServiceScopeFactory _scopeFactory;
-        private readonly IKafkaProducerFactory _producerFactory;
-        private readonly ILogger<OutboxPublisherHostedService> _log;
-        private readonly int _batchSize;
-        private readonly int _pollMs;
 
+        /// <summary>
+        /// Kafka producer factory
+        /// </summary>
+        private readonly IKafkaProducerFactory _producerFactory;
+
+        /// <summary>
+        /// Логирование сервиса
+        /// </summary>
+        private readonly ILogger<OutboxPublisherHostedService> _log;
+
+        /// <summary>
+        /// Размер сообщений
+        /// </summary>
+        private readonly int _batchSize;
+
+        /// <summary>
+        /// Интервал опроса Outbox
+        /// </summary>
+        private readonly int _pollMs;
+        /// <summary>
+        /// Конструктор OutboxPublisherHostedService
+        /// </summary>
         public OutboxPublisherHostedService(
             IServiceScopeFactory scopeFactory,
             IKafkaProducerFactory producerFactory,
@@ -22,11 +46,14 @@ namespace OrdersService.Messaging
             _scopeFactory = scopeFactory;
             _producerFactory = producerFactory;
             _log = log;
-
             _batchSize = cfg.GetValue("Outbox:BatchSize", 20);
             _pollMs = cfg.GetValue("Outbox:PollIntervalMs", 1000);
         }
 
+        /// <summary>
+        /// Основной цикл публикации
+        /// </summary>
+        /// <param name="stoppingToken">Токен остановки</param>
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             using IProducer<string, string> producer = _producerFactory.Create();

@@ -14,7 +14,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2d2d501-db0b-4ec0-a761-5a6772f8a4eb" name="Changes" comment="" />
+    <list default="true" id="a2d2d501-db0b-4ec0-a761-5a6772f8a4eb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/GatewayService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GatewayService/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrdersService/Controllers/OrdersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrdersService/Controllers/OrdersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrdersService/Data/Entities/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrdersService/Data/Entities/Order.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrdersService/Data/Entities/OutboxMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrdersService/Data/Entities/OutboxMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrdersService/Data/OrdersDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrdersService/Data/OrdersDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrdersService/Messaging/OutboxPublisherHostedService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrdersService/Messaging/OutboxPublisherHostedService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrdersService/Messaging/PaymentResultConsumerHostedService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrdersService/Messaging/PaymentResultConsumerHostedService.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +31,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "gogogok"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/gogogok/HSE_Shop.git",
+    "accountId": "61560619-b8f1-488f-a7e9-1c6b083365e6"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/GatewayService/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/OrdersService/Controllers/OrdersController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -70,20 +90,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;SolutionBuilderGeneralOptionsPage&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "SolutionBuilderGeneralOptionsPage",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.OrdersService: http">
     <configuration name="GatewayService" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -375,7 +396,7 @@
       <workItem from="1766418320659" duration="11319000" />
       <workItem from="1766433560946" duration="5709000" />
       <workItem from="1766450684010" duration="7460000" />
-      <workItem from="1766493515803" duration="15876000" />
+      <workItem from="1766493515803" duration="17813000" />
     </task>
     <servers />
   </component>
