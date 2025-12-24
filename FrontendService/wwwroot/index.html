@@ -3,48 +3,439 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>HSE_Shop Frontend</title>
+    <title>HSE_Shop</title>
     <style>
-        body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 24px auto; padding: 0 16px; }
-        .row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
-        input { padding: 8px; min-width: 220px; }
-        button { padding: 8px 12px; cursor: pointer; }
-        pre { background: #f6f6f6; padding: 12px; overflow: auto; }
-        h2 { margin-top: 28px; }
+        :root{
+            --bg:#0b1220;
+            --panel:#111a2f;
+            --panel2:#0f1730;
+            --text:#e9eefc;
+            --muted:#9fb0d6;
+            --border:rgba(255,255,255,.08);
+            --shadow: 0 18px 50px rgba(0,0,0,.35);
+            --accent:#7c5cff;
+            --accent2:#2dd4bf;
+            --danger:#ff4d6d;
+            --warn:#fbbf24;
+            --ok:#22c55e;
+            --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            --radius:18px;
+        }
+        *{ box-sizing:border-box; }
+        body{
+            margin:0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+            color:var(--text);
+            background:
+                    radial-gradient(1200px 600px at 10% 0%, rgba(124,92,255,.22), transparent 55%),
+                    radial-gradient(1000px 650px at 90% 10%, rgba(45,212,191,.18), transparent 50%),
+                    radial-gradient(900px 500px at 40% 120%, rgba(251,191,36,.12), transparent 55%),
+                    var(--bg);
+            min-height:100vh;
+            padding:28px 16px 56px;
+        }
+        .wrap{ max-width: 1100px; margin:0 auto; }
+        header{
+            display:flex;
+            align-items:flex-start;
+            justify-content:space-between;
+            gap:16px;
+            margin-bottom:18px;
+        }
+        .brand{
+            display:flex; flex-direction:column; gap:6px;
+        }
+        .brand h1{
+            margin:0;
+            font-size: 28px;
+            letter-spacing:.2px;
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+        .pill{
+            font-size:12px;
+            padding:4px 10px;
+            border-radius:999px;
+            background: rgba(124,92,255,.14);
+            border:1px solid rgba(124,92,255,.30);
+            color:#d9d1ff;
+        }
+        .sub{
+            margin:0;
+            color:var(--muted);
+            line-height:1.35;
+            font-size:14px;
+        }
+
+        .topbar{
+            display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+        }
+        .chip{
+            display:flex; align-items:center; gap:8px;
+            padding:10px 12px;
+            border-radius:999px;
+            background: rgba(255,255,255,.05);
+            border:1px solid var(--border);
+            backdrop-filter: blur(8px);
+        }
+        .chip label{ color:var(--muted); font-size:12px; }
+        .chip input{
+            width:220px;
+            border:none; outline:none;
+            color:var(--text);
+            background:transparent;
+            font-size:14px;
+        }
+
+        .grid{
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            gap:14px;
+            margin-top:14px;
+        }
+        @media (max-width: 900px){
+            .grid{ grid-template-columns: 1fr; }
+            .chip input{ width:180px; }
+        }
+
+        .card{
+            background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+            border:1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow:hidden;
+        }
+        .card .head{
+            padding:14px 14px 10px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:10px;
+            border-bottom:1px solid var(--border);
+        }
+        .card .head h2{
+            margin:0;
+            font-size:15px;
+            letter-spacing:.2px;
+            display:flex; align-items:center; gap:8px;
+        }
+        .hint{
+            color:var(--muted);
+            font-size:12px;
+        }
+        .card .body{
+            padding:14px;
+            display:flex;
+            flex-direction:column;
+            gap:12px;
+        }
+
+        .row{
+            display:flex;
+            gap:10px;
+            flex-wrap:wrap;
+            align-items:center;
+        }
+        .field{
+            display:flex;
+            flex-direction:column;
+            gap:6px;
+            min-width:220px;
+            flex:1;
+        }
+        .field.small{ min-width:160px; flex:0 0 auto; }
+        .field label{
+            font-size:12px;
+            color:var(--muted);
+        }
+        .field input{
+            width:100%;
+            padding:10px 12px;
+            border-radius:14px;
+            border:1px solid var(--border);
+            background: rgba(15,23,48,.55);
+            color:var(--text);
+            outline:none;
+        }
+        .field input:focus{
+            border-color: rgba(124,92,255,.55);
+            box-shadow: 0 0 0 4px rgba(124,92,255,.14);
+        }
+
+        .btns{ display:flex; gap:10px; flex-wrap:wrap; }
+        button{
+            border:none;
+            cursor:pointer;
+            padding:10px 12px;
+            border-radius:14px;
+            color:var(--text);
+            background: rgba(255,255,255,.06);
+            border:1px solid var(--border);
+            transition: transform .06s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+            font-weight:600;
+            font-size:13px;
+        }
+        button:hover{ background: rgba(255,255,255,.09); }
+        button:active{ transform: translateY(1px); }
+        button.primary{
+            background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(45,212,191,.75));
+            border-color: rgba(255,255,255,.16);
+            color:#0b1220;
+        }
+        button.danger{
+            border-color: rgba(255,77,109,.35);
+            background: rgba(255,77,109,.10);
+        }
+        button:disabled{
+            opacity:.55;
+            cursor:not-allowed;
+        }
+
+        .statusline{
+            display:flex;
+            gap:10px;
+            align-items:center;
+            justify-content:space-between;
+            padding:10px 12px;
+            border-radius:14px;
+            border:1px solid var(--border);
+            background: rgba(15,23,48,.55);
+        }
+        .badge{
+            display:inline-flex;
+            align-items:center;
+            gap:6px;
+            padding:6px 10px;
+            border-radius:999px;
+            font-size:12px;
+            border:1px solid var(--border);
+            background: rgba(255,255,255,.05);
+            color: var(--muted);
+            white-space:nowrap;
+        }
+        .badge.ok{ background: rgba(34,197,94,.12); border-color: rgba(34,197,94,.35); color:#bff7d4; }
+        .badge.bad{ background: rgba(255,77,109,.12); border-color: rgba(255,77,109,.35); color:#ffd0d9; }
+        .badge.wait{ background: rgba(251,191,36,.12); border-color: rgba(251,191,36,.35); color:#ffe9b0; }
+
+        .mono{
+            font-family: var(--mono);
+            font-size: 12px;
+            color: #cfe1ff;
+            opacity:.95;
+        }
+
+        .table{
+            width:100%;
+            border-collapse:collapse;
+            overflow:hidden;
+            border-radius: 14px;
+            border:1px solid var(--border);
+            background: rgba(15,23,48,.55);
+        }
+        .table th, .table td{
+            padding:10px 10px;
+            border-bottom:1px solid var(--border);
+            text-align:left;
+            font-size:13px;
+        }
+        .table th{
+            color:var(--muted);
+            font-weight:700;
+            font-size:12px;
+            letter-spacing:.2px;
+        }
+        .table tr:last-child td{ border-bottom:none; }
+        .table td.right{ text-align:right; }
+
+        .log{
+            background: rgba(10,16,34,.55);
+            border:1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow:hidden;
+            margin-top:14px;
+        }
+        .loghead{
+            padding:12px 14px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:12px;
+            border-bottom:1px solid var(--border);
+        }
+        .loghead .left{
+            display:flex; flex-direction:column; gap:4px;
+        }
+        .loghead h3{ margin:0; font-size:14px; }
+        .loghead .muted{ color:var(--muted); font-size:12px; }
+        pre{
+            margin:0;
+            padding:14px;
+            overflow:auto;
+            max-height: 340px;
+            font-family: var(--mono);
+            font-size: 12px;
+            color:#d8e6ff;
+            line-height:1.45;
+        }
+
+        .toast{
+            position: fixed;
+            right: 16px;
+            top: 16px;
+            display:flex;
+            flex-direction:column;
+            gap:10px;
+            z-index: 50;
+        }
+        .toast .item{
+            min-width: 260px;
+            max-width: 360px;
+            padding: 10px 12px;
+            border-radius: 14px;
+            border:1px solid var(--border);
+            background: rgba(15,23,48,.85);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            display:flex;
+            gap:10px;
+            align-items:flex-start;
+        }
+        .dot{
+            width:10px; height:10px;
+            border-radius:999px;
+            margin-top:4px;
+            background: var(--accent);
+        }
+        .dot.ok{ background: var(--ok); }
+        .dot.bad{ background: var(--danger); }
+        .dot.wait{ background: var(--warn); }
+        .toast .title{ font-weight:800; font-size:13px; margin:0; }
+        .toast .desc{ margin:2px 0 0; color:var(--muted); font-size:12px; line-height:1.35; }
     </style>
 </head>
 <body>
-<h1>HSE_Shop</h1>
-<p>Minimal frontend (separate .NET service) — REST via GatewayService</p>
+<div class="wrap">
 
-<h2>Payments</h2>
-<div class="row">
-    <input id="userId" placeholder="userId (e.g. u1)"/>
+    <header>
+        <div class="brand">
+            <h1>HSE_Shop <span class="pill">Gateway → Orders/Payments</span></h1>
+        </div>
+
+        <div class="topbar">
+            <div class="chip">
+                <label>Пользователь</label>
+                <input id="userId" placeholder="userId (например 1 или u1)"/>
+            </div>
+            <div class="chip">
+                <label>Gateway</label>
+                <input id="gatewayBase" value="http://localhost:8080"/>
+            </div>
+        </div>
+    </header>
+
+    <div class="grid">
+        <section class="card">
+            <div class="head">
+                <h2>💳 Платежи</h2>
+                <div class="hint">Аккаунт и баланс</div>
+            </div>
+            <div class="body">
+                <div class="btns">
+                    <button class="primary" id="btnCreateAcc" onclick="createAccount()">Создать аккаунт</button>
+                    <button id="btnBalance" onclick="getBalance()">Показать баланс</button>
+                </div>
+
+                <div class="row">
+                    <div class="field small">
+                        <label>Сумма пополнения</label>
+                        <input id="topupAmount" placeholder="например 100" inputmode="decimal"/>
+                    </div>
+                    <button class="primary" id="btnTopUp" onclick="topUp()">Пополнить</button>
+                </div>
+
+                <div class="statusline">
+                    <div class="mono" id="balanceLine">Баланс: —</div>
+                    <span class="badge" id="accountBadge">Аккаунт: неизвестно</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="head">
+                <h2>🧾 Заказы</h2>
+                <div class="hint">Создание и статус</div>
+            </div>
+            <div class="body">
+                <div class="row">
+                    <div class="field small">
+                        <label>Сумма заказа</label>
+                        <input id="orderAmount" placeholder="например 25" inputmode="decimal"/>
+                    </div>
+                    <div class="field">
+                        <label>Описание</label>
+                        <input id="orderDesc" placeholder="необязательно"/>
+                    </div>
+                </div>
+
+                <div class="btns">
+                    <button class="primary" id="btnCreateOrder" onclick="createOrder()">Создать заказ</button>
+                    <button id="btnListOrders" onclick="listOrders()">Список заказов</button>
+                </div>
+
+                <div class="statusline">
+                    <span class="badge wait" id="paymentBadge">Оплата: нет</span>
+                    <div class="mono" id="lastOrderLine">Последний заказ: —</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+        <div class="head">
+            <h2>Список заказов</h2>
+            <div class="hint">Последняя загруженная выборка</div>
+        </div>
+        <div class="body">
+            <div style="overflow:auto;">
+                <table class="table" id="ordersTable">
+                    <thead>
+                    <tr>
+                        <th>OrderId</th>
+                        <th>Пользователь</th>
+                        <th class="right">Сумма</th>
+                        <th>Статус</th>
+                        <th>Ошибка</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr><td colspan="5" class="mono">Пока нет данных.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="log">
+        <div class="loghead">
+            <div class="left">
+                <h3>Вывод</h3>
+                <div class="muted">Сырые ответы API (JSON)</div>
+            </div>
+            <div class="btns">
+                <button onclick="copyOut()">Копировать</button>
+                <button class="danger" onclick="clearOut()">Очистить</button>
+            </div>
+        </div>
+        <pre id="out">Готово.</pre>
+    </div>
+
+    <div class="toast" id="toast"></div>
 </div>
-
-<div class="row">
-    <button onclick="createAccount()">Create account</button>
-    <button onclick="getBalance()">Get balance</button>
-</div>
-
-<div class="row">
-    <input id="topupAmount" placeholder="topup amount (e.g. 100)" />
-    <button onclick="topUp()">Top up</button>
-</div>
-
-<h2>Orders</h2>
-<div class="row">
-    <input id="orderAmount" placeholder="order amount (e.g. 25)" />
-    <input id="orderDesc" placeholder="description" />
-    <button onclick="createOrder()">Create order</button>
-</div>
-
-<div class="row">
-    <button onclick="listOrders()">List orders</button>
-</div>
-
-<h2>Output</h2>
-<pre id="out">Ready.</pre>
 
 <script src="app.js"></script>
 </body>

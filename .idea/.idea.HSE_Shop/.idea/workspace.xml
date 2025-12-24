@@ -15,13 +15,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2d2d501-db0b-4ec0-a761-5a6772f8a4eb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/FrontendService/wwwroot/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendService/wwwroot/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontendService/wwwroot/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontendService/wwwroot/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GatewayService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GatewayService/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrdersService/Controllers/OrdersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrdersService/Controllers/OrdersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrdersService/Data/Entities/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrdersService/Data/Entities/Order.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrdersService/Data/Entities/OutboxMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrdersService/Data/Entities/OutboxMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrdersService/Data/OrdersDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrdersService/Data/OrdersDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrdersService/Messaging/OutboxPublisherHostedService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrdersService/Messaging/OutboxPublisherHostedService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrdersService/Messaging/PaymentResultConsumerHostedService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrdersService/Messaging/PaymentResultConsumerHostedService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +75,7 @@
     <setting file="file://$PROJECT_DIR$/SharedContracts/Messages/OrderPaymentRequested.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SharedContracts/Messages/PaymentResult.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="Toolset" />
   </component>
@@ -396,16 +393,28 @@
       <workItem from="1766418320659" duration="11319000" />
       <workItem from="1766433560946" duration="5709000" />
       <workItem from="1766450684010" duration="7460000" />
-      <workItem from="1766493515803" duration="17813000" />
+      <workItem from="1766493515803" duration="22654000" />
     </task>
+    <task id="LOCAL-00001" summary="добавлена часть комментариев">
+      <option name="closed" value="true" />
+      <created>1766596808735</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1766596808735</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="добавлена часть комментариев" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлена часть комментариев" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
